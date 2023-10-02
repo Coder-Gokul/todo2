@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800;900&display=swap");
+
+:root {
+  --dark: #374151;
+  --darker: #1f2937;
+  --darkest: #111827;
+  --gray: #6b7280;
+  --light: #eee;
+  --pink: #ec4899;
+  --purple: #8b5cf6;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--dark);
+  color: #fff;
+
+}
+header {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 3px solid var(--darkest);
+
+}
+header h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-bottom: 3px solid var(--darkest); */
+
+}
+#new-task-form {
+  display: flex;
+  min-width: 320px;
+
+}
+input,
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+#new-task-input {
+  flex: 1;
+  background-color: var(--darker);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  color: var(--light);
+  font-size: 1.25rem;
+  width: 70%;
+
+}
+#new-task-input::placeholder {
+  color: var(--gray);
+}
+#new-task-submit {
+  width: 30%;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.4s;
+}
+#new-task-submit:hover {
+  opacity: 0.8;
+}
+#new-task-submit:active {
+  opacity: 0.6;
+}
+main {
+  flex: 1;
+  padding: 2rem 0rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+.task-list {
+  padding: 0rem;
+}
+.task{
+  min-width: 320px;
+}
+.task-list h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin: 1rem 0;
+  color: var(--gray);
+}
+#tasks .task {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--darkest);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+#tasks .task .content {
+  flex: 1;
+}
+#tasks .task .content .text {
+  color: var(--light);
+  font-size: 1.12rem;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+  position: relative;
+  padding-left: 40px;
+}
+#tasks .task span::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url("assets/images/checked.png");
+  background-size: cover;
+  background-position: center;
+}
+#tasks .task span.checked::before {
+  background-image: url("assets/images/unchecked.png");
+}
+
+#tasks .task .content .text.checked {
+  text-decoration: line-through;
+  color: var(--gray);
+}
+
+#tasks .task .content .text:not(:read-only) {
+  color: var(--pink);
+}
+#tasks .task .actions {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+.task .actions button {
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+.task .actions button:hover {
+  opacity: 0.8;
+}
+.task .actions button:active {
+  opacity: 0.6;
+}
+.task .actions .edit {
+  background: linear-gradient(to right, var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.task .actions .delete {
+  color: crimson;
+}
+.task .actions button.disable {
+  display: none;
+}
+aside{
+  display: flex;
+  min-width: 320px;
+  border-bottom: 3px solid var(--darkest);
+
+}
+h3{
+  min-width: 100%;
+  flex : 1;
+}
+#status{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  font-size: medium;
+  color: var(--gray);
+  /* border-bottom: 3px solid var(--darkest); */
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+ 
+}
+
